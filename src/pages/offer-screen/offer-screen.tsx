@@ -194,7 +194,7 @@ function OfferScreen({reviews, offers}: OfferScreenProps): JSX.Element {
             </div>
           </div>
           <section className="offer__map map">
-          <CitiesMap city={offers[0].city} points={offers.filter((e) => e.id !== '1')} />
+            <CitiesMap city={offers[0].city} points={offers.filter((e) => e.id !== '1')} />
           </section>
         </section>
         <div className="container">
