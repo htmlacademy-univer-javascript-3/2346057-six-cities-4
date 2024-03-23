@@ -62,13 +62,13 @@ function FavoutitesScreen({ favourites }: FavoutitesScreenProps): JSX.Element {
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
               {Object.keys(favouritesMap).map((city) => (
-                  <FavouritesCityBlock
-                    city={city}
-                    places={favouritesMap[city]}
-                    // поправить индексацию
-                    key={favouritesMap[city][0].id}
-                  />
-                ))}
+                <FavouritesCityBlock
+                  city={city}
+                  places={favouritesMap[city]}
+                  // поправить индексацию
+                  key={favouritesMap[city][0].id}
+                />
+              ))}
             </ul>
           </section>
         </div>
