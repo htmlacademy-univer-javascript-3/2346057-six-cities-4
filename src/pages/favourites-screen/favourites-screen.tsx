@@ -1,5 +1,5 @@
 import { Offer } from '../../types/offer';
-import FavouritesCityBlock from '../../components/favourites-city-block/favourites-city-block';
+import FavouritesCityBlock from '../../components/favourites-city-block/favourites-city-block.tsx';
 import { Link } from 'react-router-dom';
 
 type FavoutitesScreenProps = {
