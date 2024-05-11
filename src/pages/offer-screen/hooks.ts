@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useAppOutletContext } from '../../components/page-layout/hooks';
+import { useAppOutletContext } from '../../components/page/page-layout/hooks';
 import { ExtendedOffer } from '../../types/offer';
 import {
   fetchNearbyAction,

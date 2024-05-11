@@ -1,4 +1,4 @@
-import { ExtendedOffer } from '../../types/offer';
+import { ExtendedOffer } from '../../../types/offer';
 
 const MAX_IMAGES = 6;
 

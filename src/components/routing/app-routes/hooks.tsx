@@ -1,14 +1,14 @@
-import { getAuthorizationStatus, useAppSelector } from '../../store';
-import { Routes } from '../../const';
-import PageLayout from '../page-layout/page-layout';
-import MainScreen from '../../pages/main-screen/main-screen';
+import { getAuthorizationStatus, useAppSelector } from '../../../store';
+import { Routes } from '../../../const';
+import PageLayout from '../../page/page-layout/page-layout';
+import MainScreen from '../../../pages/main-screen/main-screen';
 
 import MainRouteRedirection from '../main-route-redirection/main-route-redirection';
 import PrivateRouteRoute from '../private-route/private-route';
-import FavoritesScreen from '../../pages/favourites-screen/favourites-screen';
-import OfferScreen from '../../pages/offer-screen/offer-screen';
-import LoginScreen from '../../pages/login-screen/login-screen';
-import ErrorScreen from '../../pages/error-screen/error-screen';
+import FavoritesScreen from '../../../pages/favourites-screen/favourites-screen';
+import OfferScreen from '../../../pages/offer-screen/offer-screen';
+import LoginScreen from '../../../pages/login-screen/login-screen';
+import ErrorScreen from '../../../pages/error-screen/error-screen';
 
 function useAppRoutes() {
   const userAuthorizationStatus = useAppSelector(getAuthorizationStatus);

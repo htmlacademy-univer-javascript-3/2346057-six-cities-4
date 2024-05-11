@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { Routes, AuthorizationStatus } from '../../const';
+import { Routes, AuthorizationStatus } from '../../../const';
 
 type MainRouteRedirectionProps = {
   children: JSX.Element;

@@ -1,5 +1,6 @@
-import { formatRating, capitalizeFirstLetter } from '../../utils';
-import { ExtendedOffer } from '../../types/offer';
+import { formatRating, capitalizeFirstLetter } from '../../../utils';
+import { ExtendedOffer } from '../../../types/offer';
+import AddToFavouritesButton from '../../add-to-favourites-button/add-to-favourites-button';
 
 type OfferDescriptionProps = {
   offer: ExtendedOffer;
@@ -7,6 +8,7 @@ type OfferDescriptionProps = {
 
 function OfferDescription({ offer }: OfferDescriptionProps): JSX.Element {
   const {
+    id,
     isPremium,
     rating,
     title,
@@ -15,6 +17,7 @@ function OfferDescription({ offer }: OfferDescriptionProps): JSX.Element {
     type,
     bedrooms,
     maxAdults,
+    isFavorite
   } = offer;
 
   const offerFeatures = [
@@ -43,6 +46,16 @@ function OfferDescription({ offer }: OfferDescriptionProps): JSX.Element {
       )}
       <div className="offer__name-wrapper">
         <h1 className="offer__name">{title}</h1>
+        <AddToFavouritesButton
+          id={id}
+          isFavorite={isFavorite}
+          iconWidth={31}
+          iconHeight={33}
+          buttonClass="offer__bookmark-button"
+          activeClass="offer__bookmark-button--active"
+          iconClass="offer__bookmark-icon"
+          buttonText="To bookmarks"
+        />
       </div>
       <div className="offer__rating rating">
         <div className="offer__stars rating__stars">

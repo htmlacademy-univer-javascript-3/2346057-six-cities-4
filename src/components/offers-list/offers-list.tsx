@@ -2,6 +2,7 @@ import OfferCard from '../offer-card/offer-card';
 import { sortOfferFunction } from '../../utils.ts';
 import { getSelectedSortType, useAppSelector } from '../../store';
 import { Offer } from '../../types/offer';
+import { memo } from 'react';
 
 export type CardType = 'cities' | 'favorites' | 'near-places';
 
@@ -36,4 +37,6 @@ function OffersList({
   );
 }
 
-export default OffersList;
+const OffersListMemo = memo(OffersList);
+
+export default OffersListMemo;

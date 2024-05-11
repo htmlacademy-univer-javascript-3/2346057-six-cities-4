@@ -1,5 +1,6 @@
 import { Offer } from '../../types/offer.ts';
 import AvailableOffers from '../available-offers/available-offers';
+import EmptyOffers from '../empty-offers/empty-offers';
 
 interface OffersContainerProps {
   offers: Offer[];
@@ -13,7 +14,11 @@ function OffersContainer({
   handleCardMouseLeave,
 }: OffersContainerProps): JSX.Element {
 
-  return (
+  const noPlacesAvailable = offers.length === 0;
+
+  return noPlacesAvailable ? (
+    <EmptyOffers />
+  ) : (
     <AvailableOffers
       offers={offers}
       handleCardMouseEnter={handleCardMouseEnter}

@@ -1,7 +1,7 @@
 import cn from 'classnames';
-import { getFavorites, useAppSelector } from '../../store';
+import { getFavorites, useAppSelector } from '../../../store';
 import { useLocation } from 'react-router-dom';
-import { Routes } from '../../const';
+import { Routes } from '../../../const';
 
 interface PageBodyProps {
   children: React.ReactNode;

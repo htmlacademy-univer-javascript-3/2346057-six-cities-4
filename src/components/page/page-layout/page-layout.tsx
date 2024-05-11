@@ -5,7 +5,7 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 import { usePageInfo } from './hooks';
 import { ReactNode } from 'react';
-import { routeNameToPageInfoMap } from '../../const';
+import { routeNameToPageInfoMap } from '../../../const';
 
 type PageLayoutProps = {
   isPageWrapper?: boolean;
