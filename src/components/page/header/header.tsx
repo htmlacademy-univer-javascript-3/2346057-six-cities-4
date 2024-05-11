@@ -1,7 +1,7 @@
 import cn from 'classnames';
-import UserNavigation from '../user-navigation/user-navigation';
+import UserNavigation from '../../user-navigation/user-navigation';
 import { Link } from 'react-router-dom';
-import { Routes } from '../../const';
+import { Routes } from '../../../const';
 import { memo } from 'react';
 
 type HeaderProps = {

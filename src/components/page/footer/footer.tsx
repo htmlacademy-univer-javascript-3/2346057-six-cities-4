@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Routes } from '../../const';
+import { Routes } from '../../../const';
 
 function Footer(): JSX.Element {
   return (
