@@ -1,24 +1,25 @@
 import { Link } from 'react-router-dom';
 import CommentForm from '../../components/comment-form/comment-form';
 import ReviewsList from '../../components/reviews-list/reviews-list';
-import NearestCitiesCardList from '../../components/nearest-cities-card-list/nearest-cities-card-list';
 import { Review } from '../../types/review';
 import CitiesMap from '../../components/cities-map/cities-map';
 import { Offer } from '../../types/offer';
+import NearestCitiesCardList from '../../components/nearest-cities-card-list/nearest-cities-card-list';
+import { useAppSelector } from '../../hooks';
 
 type OfferScreenProps = {
   reviews: Review[];
-  offers: Offer[];
-}
+};
 
-function OfferScreen({reviews, offers}: OfferScreenProps): JSX.Element {
+function OfferScreen({ reviews }: OfferScreenProps): JSX.Element {
+  const offers: Offer[] = useAppSelector((state) => state.offersList);
   return (
     <div className="page">
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <Link to='/' className="header__logo-link">
+              <Link to="/" className="header__logo-link">
                 <img
                   className="header__logo"
                   src="img/logo.svg"
@@ -31,18 +32,16 @@ function OfferScreen({reviews, offers}: OfferScreenProps): JSX.Element {
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
-                  <a
+                  <Link
                     className="header__nav-link header__nav-link--profile"
-                    href="#"
+                    to="favourites"
                   >
                     <div className="header__avatar-wrapper user__avatar-wrapper"></div>
                     <span className="header__user-name user__name">
                       Oliver.conner@gmail.com
                     </span>
-                    <Link to="/favourites">
-                      <span className="header__favorite-count">3</span>
-                    </Link>
-                  </a>
+                    <span className="header__favorite-count">3</span>
+                  </Link>
                 </li>
                 <li className="header__nav-item">
                   <a className="header__nav-link" href="#">
@@ -186,15 +185,16 @@ function OfferScreen({reviews, offers}: OfferScreenProps): JSX.Element {
               </div>
               <section className="offer__reviews reviews">
                 <h2 className="reviews__title">
-                  Reviews &middot; <span className="reviews__amount">{reviews.length}</span>
+                  Reviews &middot;{' '}
+                  <span className="reviews__amount">{reviews.length}</span>
                 </h2>
-                <ReviewsList reviews={reviews}/>
+                <ReviewsList reviews={reviews} />
                 <CommentForm />
               </section>
             </div>
           </div>
           <section className="offer__map map">
-            <CitiesMap city={offers[0].city} points={offers.filter((e) => e.id !== '1')} />
+            <CitiesMap points={offers} />
           </section>
         </section>
         <div className="container">
@@ -202,8 +202,9 @@ function OfferScreen({reviews, offers}: OfferScreenProps): JSX.Element {
             <h2 className="near-places__title">
               Other places in the neighbourhood
             </h2>
-            <NearestCitiesCardList cities={offers.filter((e) => e.id !== '1')} />
-
+            <NearestCitiesCardList
+              offers={offers.filter((e) => e.id !== '1')}
+            />
           </section>
         </div>
       </main>

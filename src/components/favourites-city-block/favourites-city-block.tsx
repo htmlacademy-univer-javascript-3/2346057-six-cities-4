@@ -1,6 +1,6 @@
 import { CardType } from '../../const';
 import { Offer } from '../../types/offer';
-import CityCard from '../city-card/city-card';
+import OfferCard from '../offer-card/offer-card';
 
 type FavouritesCityBlockProps = {
   city: string;
@@ -19,7 +19,11 @@ function FavouritesCityBlock({ city, places }: FavouritesCityBlockProps) {
       </div>
       <div className="favorites__places">
         {places.map((place) => (
-          <CityCard key={place.id} cardInfo={place} typeClassName={CardType.favourites}/>
+          <OfferCard
+            key={place.id}
+            cardInfo={place}
+            typeClassName={CardType.favourites}
+          />
         ))}
       </div>
     </li>
