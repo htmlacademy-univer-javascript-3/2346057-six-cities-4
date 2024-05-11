@@ -1,5 +1,5 @@
 import { Offer } from './offer';
 
-export type OffersCardListProps  = {
+export type OffersCardListProps = {
   offers: Offer[];
 }
