@@ -6,7 +6,7 @@ import { processErrorHandle } from '../../services/process-error-handle';
 
 const REGEX_PASSWORD = /^(?=.*[a-zA-Z])(?=.*\d)[^\s]+$/;
 const PASSWORD_ERROR_MESSAGE =
-  'The password must consist of at least one English letter and one symbol without spaces.';
+  'В пароле должны быть по крайней мере одна английская буква и одна цифра';
 
 const isPasswordValid = (password: string) => REGEX_PASSWORD.test(password);
 
