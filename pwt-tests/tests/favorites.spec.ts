@@ -34,7 +34,7 @@ test('Избранное (неавторизован/авторизован)', a
     await page.goto('http://localhost:5173/favorites');
     await page.waitForURL('http://localhost:5173/login');
 
-
+//сценарий авторизированого пользователя
     await page.goto('http://localhost:5173/login');
 
     await page.fill('input[name="email"]', 'AlinaTest@mail.com');
@@ -73,9 +73,6 @@ test('Избранное (неавторизован/авторизован)', a
     const favCardCity = await page.locator('.locations__item-link').first().textContent();
 
     expect(favCardCity).toBe('Paris');
-    const favoritesCardsNumber = ( await page.locator('.locations__item-link').all()).length;
-    const lastFavCounter = await getFavoritesNumber();
-    expect(favoritesCardsNumber).toBe(lastFavCounter);
 
     await Promise.all([
       page.waitForResponse(

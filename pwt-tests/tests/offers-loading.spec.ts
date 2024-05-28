@@ -12,8 +12,9 @@ test('Загрузки карточек', async ({ page }) => {
   await page.waitForSelector('.header__nav-link');
 
   const cardTitles = await page.locator('.place-card__name').allInnerTexts();
+  //получаем цифру из описания
   const drawnNumberOfCards = parseInt((await page.locator('.places__found').textContent())?.split(' ')[0] ?? '0');
 
-  expect(20).toEqual(drawnNumberOfCards);
+  expect(cardTitles.length).toEqual(drawnNumberOfCards);
   cardTitles.forEach((title) => title.length > 10);
 });
